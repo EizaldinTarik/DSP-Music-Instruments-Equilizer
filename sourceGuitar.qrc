@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>drumb.png</file>
+    <file>piano2.png</file>
+    <file>Piano.jpg</file>
+    <file>Guitar.png</file>
+  </qresource>
+</RCC>
