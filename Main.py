@@ -18,6 +18,7 @@ from matplotlib.figure import Figure
 import sys
 import sourceGuitar
 import pygame
+from Tones import *
 from GUI import Ui_Piano_istrument
 
 import logging
