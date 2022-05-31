@@ -146,8 +146,8 @@ class Ui_Piano_istrument(object):
 
         self.gridLayout_4.addWidget(self.Guitar_Picture, 0, 0, 1, 1)
 
-        self.Guitar_button_5.raise_()
         self.Guitar_Picture.raise_()
+        self.Guitar_button_5.raise_()
         self.Guitar_button_4.raise_()
         self.Guitar_button_1.raise_()
         self.Guitar_button_2.raise_()
@@ -188,29 +188,37 @@ class Ui_Piano_istrument(object):
         self.comboBox_for_tunes.addItem("")
         self.comboBox_for_tunes.addItem("")
         self.comboBox_for_tunes.setObjectName(u"comboBox_for_tunes")
-        self.comboBox_for_tunes.setGeometry(QRect(620, 250, 231, 20))
+        self.comboBox_for_tunes.setGeometry(QRect(670, 250, 231, 20))
         self.label_for_drumb_picture = QLabel(self.musicTab)
         self.label_for_drumb_picture.setObjectName(u"label_for_drumb_picture")
-        self.label_for_drumb_picture.setGeometry(QRect(450, 80, 251, 161))
+        self.label_for_drumb_picture.setGeometry(QRect(640, 80, 251, 161))
         self.label_for_drumb_picture.setStyleSheet(u"image: url(:/newPrefix/drumb.png);")
         self.tabWidgets.addTab(self.musicTab, "")
+        self.label_for_drumb_picture.raise_()
         self.DrumbButton.raise_()
         self.frameForPiano.raise_()
         self.Guitar_widget.raise_()
         self.comboBox_for_tunes.raise_()
-        self.label_for_drumb_picture.raise_()
         self.equilizerTab = QWidget()
         self.equilizerTab.setObjectName(u"equilizerTab")
         self.gridLayout_3 = QGridLayout(self.equilizerTab)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.verticalSpacer_for_singal_and_spectrogram = QSpacerItem(20, 178, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.horizontalSpacer_For_spectrogram = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_3.addItem(self.verticalSpacer_for_singal_and_spectrogram, 0, 3, 1, 1)
+        self.gridLayout_3.addItem(self.horizontalSpacer_For_spectrogram, 1, 2, 1, 1)
+
+        self.horizontalSpacer_For_signal = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_3.addItem(self.horizontalSpacer_For_signal, 1, 1, 1, 1)
 
         self.verticalLayout_For_spectrogram = QVBoxLayout()
         self.verticalLayout_For_spectrogram.setObjectName(u"verticalLayout_For_spectrogram")
 
         self.gridLayout_3.addLayout(self.verticalLayout_For_spectrogram, 0, 2, 1, 1)
+
+        self.verticalSpacer_for_singal_and_spectrogram = QSpacerItem(20, 178, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_3.addItem(self.verticalSpacer_for_singal_and_spectrogram, 0, 3, 1, 1)
 
         self.verticalLayout_For_signal = QVBoxLayout()
         self.verticalLayout_For_signal.setObjectName(u"verticalLayout_For_signal")
@@ -226,31 +234,26 @@ class Ui_Piano_istrument(object):
 
         self.verticalLayout_For_Buttons.addWidget(self.pushButton_Open)
 
-        self.pushButton_Play = QPushButton(self.equilizerTab)
-        self.pushButton_Play.setObjectName(u"pushButton_Play")
+        self.pushButton_Play_Pause = QPushButton(self.equilizerTab)
+        self.pushButton_Play_Pause.setObjectName(u"pushButton_Play_Pause")
 
-        self.verticalLayout_For_Buttons.addWidget(self.pushButton_Play)
-
-        self.pushButton_pause = QPushButton(self.equilizerTab)
-        self.pushButton_pause.setObjectName(u"pushButton_pause")
-
-        self.verticalLayout_For_Buttons.addWidget(self.pushButton_pause)
+        self.verticalLayout_For_Buttons.addWidget(self.pushButton_Play_Pause)
 
         self.Apply_3 = QPushButton(self.equilizerTab)
         self.Apply_3.setObjectName(u"Apply_3")
 
         self.verticalLayout_For_Buttons.addWidget(self.Apply_3)
 
-        self.pushButton_For_Spare = QPushButton(self.equilizerTab)
-        self.pushButton_For_Spare.setObjectName(u"pushButton_For_Spare")
-
-        self.verticalLayout_For_Buttons.addWidget(self.pushButton_For_Spare)
-
 
         self.horizontalLayout_For_Feautures.addLayout(self.verticalLayout_For_Buttons)
 
         self.verticalSlider_For_volume = QSlider(self.equilizerTab)
         self.verticalSlider_For_volume.setObjectName(u"verticalSlider_For_volume")
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(150)
+        sizePolicy.setHeightForWidth(self.verticalSlider_For_volume.sizePolicy().hasHeightForWidth())
+        self.verticalSlider_For_volume.setSizePolicy(sizePolicy)
         self.verticalSlider_For_volume.setMinimum(1)
         self.verticalSlider_For_volume.setMaximum(10)
         self.verticalSlider_For_volume.setValue(10)
@@ -328,13 +331,9 @@ class Ui_Piano_istrument(object):
 
         self.gridLayout_3.addLayout(self.horizontalLayout_For_Feautures, 2, 0, 1, 3)
 
-        self.horizontalSpacer_For_spectrogram = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.verticalSpacer_for_allSettings = QSpacerItem(20, 135, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.gridLayout_3.addItem(self.horizontalSpacer_For_spectrogram, 1, 2, 1, 1)
-
-        self.horizontalSpacer_For_signal = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout_3.addItem(self.horizontalSpacer_For_signal, 1, 1, 1, 1)
+        self.gridLayout_3.addItem(self.verticalSpacer_for_allSettings, 2, 3, 1, 1)
 
         self.tabWidgets.addTab(self.equilizerTab, "")
 
@@ -385,10 +384,8 @@ class Ui_Piano_istrument(object):
         self.label_for_drumb_picture.setText("")
         self.tabWidgets.setTabText(self.tabWidgets.indexOf(self.musicTab), QCoreApplication.translate("Piano_istrument", u"musicTab", None))
         self.pushButton_Open.setText(QCoreApplication.translate("Piano_istrument", u"Open", None))
-        self.pushButton_Play.setText(QCoreApplication.translate("Piano_istrument", u"Play", None))
-        self.pushButton_pause.setText(QCoreApplication.translate("Piano_istrument", u"Pause", None))
+        self.pushButton_Play_Pause.setText(QCoreApplication.translate("Piano_istrument", u"Play/Pause", None))
         self.Apply_3.setText(QCoreApplication.translate("Piano_istrument", u"Apply", None))
-        self.pushButton_For_Spare.setText(QCoreApplication.translate("Piano_istrument", u"Spare", None))
         self.Guitar_Picture_4.setText("")
         self.Guitar_Picture_2.setText("")
         self.Guitar_Picture_5.setText("")

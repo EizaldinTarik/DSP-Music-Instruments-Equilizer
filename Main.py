@@ -93,6 +93,8 @@ class ApplicationWindow(QtWidgets.QWidget):
         self.timer.setInterval(self.interval)  # msec
         self.timer.timeout.connect(self.update_plot)
         self.timer.start()
+        self.varplay = 1
+        self.varpause = 1
 
         self.ui.pushButton_Open.clicked.connect(self.open_audio_file)
         self.canvas = MplCanvas(self.ui, width=5, height=4,dpi=100)
@@ -101,8 +103,9 @@ class ApplicationWindow(QtWidgets.QWidget):
         self.ui.horizontalSlider_For_Drumb.setSliderPosition(1)
         self.ui.horizontalSlider_For_piano.setSliderPosition(1)
 
-        self.ui.pushButton_pause.clicked.connect(self.stop_media)
-        self.ui.pushButton_Play.clicked.connect(self.play_media)
+        #self.ui.pushButton_pause.clicked.connect(self.stop_media)
+        #self.ui.pushButton_Play.clicked.connect(self.play_media)
+        self.ui.pushButton_Play_Pause.clicked.connect(self.play_pause)
         self.ui.verticalSlider_For_volume.valueChanged.connect(self.Volume_Control)
 
         self.canvasSpec = MplCanvas_Spec(self.ui.verticalLayout_For_spectrogram)
@@ -217,13 +220,11 @@ class ApplicationWindow(QtWidgets.QWidget):
         self.media.audio_set_volume(value*10)
         logging.info('volume changed')
 
-    def stop_media(self):
-        self.media.pause()
-        logging.info('media paused')
-         
-    def play_media(self):
-        self.media.play()
-        logging.info('media played')
+    def play_pause(self):
+        if (self.varplay == 1):
+            self.media.pause()
+        else:
+            self.media.play()
 
 
 def main():

@@ -358,8 +358,8 @@ background-color: rgb(50, 50, 50);
          <string/>
         </property>
        </widget>
-       <zorder>Guitar_button_5</zorder>
        <zorder>Guitar_Picture</zorder>
+       <zorder>Guitar_button_5</zorder>
        <zorder>Guitar_button_4</zorder>
        <zorder>Guitar_button_1</zorder>
        <zorder>Guitar_button_2</zorder>
@@ -411,7 +411,7 @@ radius: 1.5, stop: 1 #000, stop: 2 #aaa
       <widget class="QComboBox" name="comboBox_for_tunes">
        <property name="geometry">
         <rect>
-         <x>620</x>
+         <x>670</x>
          <y>250</y>
          <width>231</width>
          <height>20</height>
@@ -436,7 +436,7 @@ radius: 1.5, stop: 1 #000, stop: 2 #aaa
       <widget class="QLabel" name="label_for_drumb_picture">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>640</x>
          <y>80</y>
          <width>251</width>
          <height>161</height>
@@ -449,17 +449,46 @@ radius: 1.5, stop: 1 #000, stop: 2 #aaa
         <string/>
        </property>
       </widget>
+      <zorder>label_for_drumb_picture</zorder>
       <zorder>DrumbButton</zorder>
       <zorder>frameForPiano</zorder>
       <zorder>Guitar_widget</zorder>
       <zorder>comboBox_for_tunes</zorder>
-      <zorder>label_for_drumb_picture</zorder>
      </widget>
      <widget class="QWidget" name="equilizerTab">
       <attribute name="title">
        <string>equilizerTab</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_For_spectrogram">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <spacer name="horizontalSpacer_For_signal">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="2">
+        <layout class="QVBoxLayout" name="verticalLayout_For_spectrogram"/>
+       </item>
        <item row="0" column="3">
         <spacer name="verticalSpacer_for_singal_and_spectrogram">
          <property name="orientation">
@@ -472,9 +501,6 @@ radius: 1.5, stop: 1 #000, stop: 2 #aaa
           </size>
          </property>
         </spacer>
-       </item>
-       <item row="0" column="2">
-        <layout class="QVBoxLayout" name="verticalLayout_For_spectrogram"/>
        </item>
        <item row="0" column="0" colspan="2">
         <layout class="QVBoxLayout" name="verticalLayout_For_signal"/>
@@ -491,16 +517,9 @@ radius: 1.5, stop: 1 #000, stop: 2 #aaa
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_Play">
+            <widget class="QPushButton" name="pushButton_Play_Pause">
              <property name="text">
-              <string>Play</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_pause">
-             <property name="text">
-              <string>Pause</string>
+              <string>Play/Pause</string>
              </property>
             </widget>
            </item>
@@ -511,17 +530,16 @@ radius: 1.5, stop: 1 #000, stop: 2 #aaa
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_For_Spare">
-             <property name="text">
-              <string>Spare</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
          <item alignment="Qt::AlignVCenter">
           <widget class="QSlider" name="verticalSlider_For_volume">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>150</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimum">
             <number>1</number>
            </property>
@@ -641,28 +659,18 @@ image: url(:/newPrefix/piano2.png);</string>
          </item>
         </layout>
        </item>
-       <item row="1" column="2">
-        <spacer name="horizontalSpacer_For_spectrogram">
+       <item row="2" column="3">
+        <spacer name="verticalSpacer_for_allSettings">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="1">
-        <spacer name="horizontalSpacer_For_signal">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
+           <width>20</width>
+           <height>135</height>
           </size>
          </property>
         </spacer>
