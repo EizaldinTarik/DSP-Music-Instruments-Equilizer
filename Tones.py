@@ -1,7 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import*
-import winsound
 import matplotlib.ticker as ticker
 from PyQt5 import QtCore as qtc
 from PyQt5 import QtWidgets as qtw
@@ -10,6 +9,7 @@ from scipy.io import wavfile
 import numpy as np
 import sounddevice as sd
 import matplotlib
+
 matplotlib.use('Qt5Agg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -17,7 +17,8 @@ import sys
 import sourceGuitar
 import pygame
 from GUI import Ui_Piano_istrument
-
+pygame.init()
+pygame.mixer.init()
 class Tones(QtWidgets.QWidget):
     def __init__(self) :
         super(Tones,self).__init__()
@@ -41,8 +42,9 @@ class Tones(QtWidgets.QWidget):
         self.ui.Guitar_button_3.clicked.connect(self.g3)
         self.ui.Guitar_button_4.clicked.connect(self.g4)
         self.ui.Guitar_button_5.clicked.connect(self.g5)
-
+    print('lol2')
     def pb0(self):
+        print('lol')
         if self.ui.comboBox_for_tunes.currentIndex()==0:
             pygame.mixer.music.load('instruments/Drumb/Octave/Bass-Drum-1.wav')
             pygame.mixer.music.play()
@@ -226,3 +228,11 @@ class Tones(QtWidgets.QWidget):
             pygame.mixer.music.load('instruments/Guitar/Spare/5.wav')
             pygame.mixer.music.play()
 
+def main():
+    app = QtWidgets.QApplication(sys.argv)
+    application = Tones()
+    application.show()
+    app.exec_()
+
+if __name__=="__main__":
+    main()
