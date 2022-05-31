@@ -149,7 +149,7 @@ class ApplicationWindow(QtWidgets.QWidget):
 
     def open_audio_file(self):
         self.full_file_path, _ = QtWidgets.QFileDialog.getOpenFileName(
-            None, 'Open Song', QtCore.QDir.rootPath(), 'wav(*.wav)')
+            filter= 'wav(*.wav)')
         self.playAudioFile(self.full_file_path)
         logging.info('Opened Wav file')
 
