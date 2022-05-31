@@ -119,7 +119,6 @@ class ApplicationWindow(QtWidgets.QWidget):
         self.ui.Apply_3.clicked.connect(self.equalize)
 
     def equalize(self):
-        # [bass , piano--- , altoSaxophone--- , guitar--- , flute, bell]
         freq_min = [90, 1000, 2000]
         freq_max = [180,2000, 15000]
 
