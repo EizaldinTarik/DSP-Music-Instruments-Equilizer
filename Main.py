@@ -102,12 +102,8 @@ class ApplicationWindow(QtWidgets.QWidget):
         self.ui.horizontalSlider_For_Guitar.setSliderPosition(1)
         self.ui.horizontalSlider_For_Drumb.setSliderPosition(1)
         self.ui.horizontalSlider_For_piano.setSliderPosition(1)
-
-        #self.ui.pushButton_pause.clicked.connect(self.stop_media)
-        #self.ui.pushButton_Play.clicked.connect(self.play_media)
         self.ui.pushButton_Play_Pause.clicked.connect(self.play_pause)
         self.ui.verticalSlider_For_volume.valueChanged.connect(self.Volume_Control)
-
         self.canvasSpec = MplCanvas_Spec(self.ui.verticalLayout_For_spectrogram)
         self.ui.horizontalSlider_For_Guitar.setSliderPosition(1)
         self.ui.horizontalSlider_For_Drumb.setSliderPosition(1)

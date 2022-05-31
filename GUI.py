@@ -10,12 +10,13 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sourceGuitar
+import pyautogui
 
 
 class Ui_Piano_istrument(object):
     def setupUi(self, Piano_istrument):
         Piano_istrument.setObjectName("Piano_istrument")
-        Piano_istrument.resize(1245, 881)
+        Piano_istrument.resize(int(pyautogui.size().width*2/3), int(pyautogui.size().height*2/3))
         Piano_istrument.setStyleSheet("#Piano_Button_1,#Piano_Button_2,#Piano_Button_3,#Piano_Button_4,#Piano_Button_5,#Piano_Button_6,#Piano_Button_7\n"
 "{\n"
 "background-color: rgb(250, 250, 250);\n"
